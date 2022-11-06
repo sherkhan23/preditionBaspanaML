@@ -56,6 +56,7 @@ price = []
 for category_name, category_href in all_categories.items():
     req = requests.get(url=category_href, headers=headers)
     src = req.text
+
     soup = BeautifulSoup(src, 'lxml')
 
     rep = [",", " ", "-", "'", ".", '/']

@@ -65,6 +65,7 @@ def engineer(csv):
             lift.append('отсутствует')
 
     print(rooms)
+    
     print(ap_class)
     print(lift)
     print(parking)
