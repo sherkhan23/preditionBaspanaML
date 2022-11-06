@@ -3,5 +3,10 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/scipy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scipy/doc/source/_static/scipy-mathjax" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scipy/scipy/_lib/boost" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scipy/scipy/_lib/highs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scipy/scipy/_lib/unuran" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scipy/scipy/sparse/linalg/_propack/PROPACK" vcs="Git" />
   </component>
 </project>
