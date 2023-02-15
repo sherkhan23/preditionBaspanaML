@@ -5,6 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import ensemble
 import joblib
 import sys
+import socket
+
 
 from tornado.httpserver import HTTPServer
 
@@ -16,10 +18,18 @@ lift = []
 parking = []
 square = []
 
-def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
-    server_address = ('', 8000)
-    httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(('127.0.0.1', 2009))
+server.listen(4)
+print('working...')
+client_socket, address = server.accept()
+data = client_socket.recv(1024).decode('utf-8')
+print(data)
+content = "weldone".encode('utf-8')
+client_socket.send(content)
+print('shut dowm')
+
+
 
 rooms.append(3)
 ap_class.append(3)
@@ -33,11 +43,11 @@ df = pd.DataFrame(dict_df)
 df['lift'] = np.where(df['lift']=='отсутствует', 0, 1)
 df['parking'] = np.where(df['parking']=='отсутствует', 0, 1)
 
-cls = {'IV класс (эконом)':3,
-       'III класс (комфорт)':2,
-       'комфорт +':4,
-       'II класс (бизнес)':1,
-       'I класс (элит)':0
+cls = {'IV класс (эконом)',
+       'III класс (комфорт)',
+       'комфорт +',
+       'II класс (бизнес)',
+       'I класс (элит)'
        }
 
 df.replace({'class': cls})
